@@ -1,0 +1,20 @@
+syntax = "proto3";
+package eosn.protobuf.v1;
+option go_package = "./pb";
+
+import "google/protobuf/timestamp.proto";
+
+message Event {
+  string source = 1;
+  string kind = 2;
+  string method = 3;
+  string network = 4;
+  string user_id = 5;
+  string api_key_id = 6;
+  string ip_address = 7;
+  int64 requests_count = 8;
+  int64 responses_count = 9;
+  int64 ingress_bytes = 10;
+  int64 egress_bytes = 11;
+  google.protobuf.Timestamp time = 12;
+}
