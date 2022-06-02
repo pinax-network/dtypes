@@ -1,4 +1,4 @@
-package v1
+package metering
 
 import (
 	"github.com/pinax-network/dtypes/proto/v1/pb"
