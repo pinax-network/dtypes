@@ -1,13 +1,13 @@
 package authentication
 
 import (
-	"github.com/golang-jwt/jwt"
+	"github.com/golang-jwt/jwt/v4"
 	"go.uber.org/zap"
 	"strings"
 )
 
 type JwtCredentials struct {
-	jwt.StandardClaims
+	jwt.RegisteredClaims
 	IP       string                   `json:"-"`
 	ApiKeyId string                   `json:"api_key_id"`
 	Networks []NetworkPermissionClaim `json:"networks"`
@@ -27,7 +27,7 @@ func (c *JwtCredentials) GetUserID() string {
 func (c *JwtCredentials) GetLogFields() []zap.Field {
 	return []zap.Field{
 		zap.String("subject", c.Subject),
-		zap.String("jti", c.Id),
+		zap.String("jti", c.ID),
 		zap.String("api_key_id", c.ApiKeyId),
 		zap.String("ip", c.IP),
 	}
