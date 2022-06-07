@@ -41,6 +41,9 @@ jobs:
           restore-keys: |
             ${{ runner.os }}-go-
 
+      - name: Install Protoc
+        uses: arduino/setup-protoc@v1
+
       - name: Run Generate
         run: go generate ./...
 
