@@ -47,6 +47,7 @@ jobs:
       - name: Run Generate
         run: |
           go install google.golang.org/protobuf/cmd/protoc-gen-go
+          go install google.golang.org/protobuf/cmd/protoc-gen-go-grpc
           go generate ./...
 
       - name: Run Tests
