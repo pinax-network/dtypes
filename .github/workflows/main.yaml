@@ -41,14 +41,14 @@ jobs:
           restore-keys: |
             ${{ runner.os }}-go-
 
-#      - name: Install Protoc
-#        uses: arduino/setup-protoc@v1
-#
-#      - name: Run Generate
-#        run: |
-#          go install google.golang.org/protobuf/cmd/protoc-gen-go
+      - name: Install Protoc
+        uses: arduino/setup-protoc@v1
+
+      - name: Run Generate
+        run: |
+          go install google.golang.org/protobuf/cmd/protoc-gen-go
 #          go install google.golang.org/protobuf/cmd/protoc-gen-go-grpc
-#          go generate ./...
+          go generate ./...
 
       - name: Run Tests
         run: go test ./...
